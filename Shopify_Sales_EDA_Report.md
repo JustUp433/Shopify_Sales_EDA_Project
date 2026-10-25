@@ -4,13 +4,15 @@
 
 This project explores a Shopify sales dataset containing 60,000 records from January 2023 to June 2025. Using Microsoft SQL Server, the analysis examined sales performance, product categories, customer countries, traffic sources, payment methods, and customer ratings. Data cleaning was performed to standardize selected column data types before conducting exploratory data analysis (EDA).
 
-The findings show that **Electronics was the strongest-performing product category**, generating approximately 8.72 million in total revenue and 8.60 million in total profit. Australia was the highest-revenue market, contributing approximately 8.70 million. Across traffic sources, Social Media generated the highest total revenue and profit, although the differences between channels were relatively small. The analysis also found that the highest-ranked five products by revenue were the same as those ranked by profit, while the lowest-ranked products differed, highlighting the importance of examining profitability alongside revenue.
+The findings show that Electronics was the strongest-performing product category, generating approximately 8.72 million in total revenue and 8.60 million in total profit. Australia was the highest-revenue market, contributing approximately 8.70 million. Across traffic sources, Social Media generated the highest total revenue and profit, although the differences between channels were relatively small. The analysis also found that the five highest-ranked products by revenue were the same as those ranked highest by profit, while the lowest-ranked products differed, highlighting the importance of examining profitability alongside revenue.
+
+Further analysis of order counts showed that Electronics recorded its highest order count through Social Media, with 1,784 orders, followed by Paid Ads with 1,734 orders. Across customer countries, the UAE recorded the highest number of Electronics orders at 1,273, followed by the USA at 1,257 and Germany at 1,256. These findings suggest opportunities to test targeted marketing campaigns for Electronics through Social Media and Paid Ads, while exploring market-specific promotions in the UAE, USA, and Germany.
 
 Average customer ratings remained close to 3.00 across the periods analyzed, indicating little variation in average ratings. Some transactions recorded negative profit, creating an opportunity to investigate the underlying causes of losses.
 
 An important limitation is that the dataset ends on June 18, 2025. Therefore, total figures for 2025 represent only part of the year and should not be directly compared with full-year totals from 2023 and 2024.
 
-Based on these findings, the next step is to develop an interactive Power BI dashboard to monitor revenue, profit, sales trends, category performance, geographic markets, and traffic sources. Further analysis should prioritize comparable time periods, investigate unprofitable transactions, and evaluate marketing effectiveness using additional cost and conversion data where available.
+Based on these findings, the next step is to develop an interactive Power BI dashboard to monitor revenue, profit, sales trends, category performance, geographic markets, and traffic sources. Recommended actions include testing targeted Electronics promotions through Social Media and Paid Ads, evaluating market-specific campaigns in countries with high Electronics order counts, and reviewing profit margins before expanding discounts. Campaign performance should be measured using conversion rates, marketing costs, revenue, and profit to determine whether these strategies deliver sustainable growth. Further analysis should also prioritize comparable time periods, investigate unprofitable transactions, and evaluate marketing effectiveness using additional cost and conversion data where available.
 ***
 ## About Author
 - **Author** : Phuree Sirimongkol
@@ -1980,20 +1982,24 @@ order by SUM(profit) DESC,payment_method ASC;
 ***
 ## Overall Findings
 
-The exploratory data analysis examined 60,000 records from the Shopify sales dataset, covering product categories, customer countries, traffic sources, payment methods, and sales performance over time. The initial data inspection found no null values, and the data types of `order_id`, `discount_percent`, and `quantity` were standardized to support further analysis.
+The exploratory data analysis examined 60,000 records from the Shopify sales dataset, covering product categories, customer countries, traffic sources, payment methods, and sales performance over time. The initial data inspection found no null values, and the data types of order_id, discount_percent, and quantity were standardized to support further analysis.
 
 Several key findings emerged:
 
-- **Sales performance by product category:** Electronics generated the highest total revenue (8.72 million) and total profit (8.60 million), while Footwear recorded the lowest totals for both metrics. Revenue and profit were relatively evenly distributed across the seven product categories.
+Sales performance by product category: Electronics generated the highest total revenue (8.72 million) and total profit (8.60 million), while Footwear recorded the lowest totals for both metrics. Revenue and profit were relatively evenly distributed across the seven product categories.
 
-- **Geographic performance:** Australia generated the highest total revenue among the seven countries, at approximately 8.70 million, while the UK generated the lowest, at approximately 8.37 million. Average revenue per record was relatively similar across countries.
+Geographic performance: Australia generated the highest total revenue among the seven countries, at approximately 8.70 million, while the UK generated the lowest, at approximately 8.37 million. Average revenue per record was relatively similar across countries.
 
-- **Traffic source performance:** Total revenue and profit were relatively consistent across traffic sources. Social Media generated the highest total revenue, while Email generated the lowest. This suggests that further analysis of marketing costs and conversion performance is needed before deciding which channels deserve greater investment.
+Traffic source performance: Total revenue and profit were relatively consistent across traffic sources. Social Media generated the highest total revenue, while Email generated the lowest. Further analysis of marketing costs and conversion performance is needed before deciding which channels deserve greater investment.
 
-- **Product performance:** The five highest-ranked products by total revenue were also the five highest-ranked by total profit. However, the bottom-five rankings differed, showing that revenue alone does not fully explain product profitability. Shipping costs and discount levels are useful factors to investigate.
+Product performance: The five highest-ranked products by total revenue were also the five highest-ranked by total profit. However, the bottom-five rankings differed, showing that revenue alone does not fully explain product profitability. Shipping costs and discount levels are useful factors to investigate.
 
-- **Customer ratings:** Average ratings remained close to 3.00 across years and customer countries, with little variation. This indicates that average ratings were broadly stable, although individual low ratings warrant further investigation.
+Customer ratings: Average ratings remained close to 3.00 across years and customer countries, with little variation. This indicates that average ratings were broadly stable, although individual low ratings warrant further investigation.
 
-- **Yearly performance:** The dataset contains records from 2023 through June 18, 2025. Total revenue, profit, quantity sold, and shipping costs are lower in 2025, but this period is incomplete and should not be directly compared with the full years of 2023 and 2024.
+Yearly performance: The dataset contains records from 2023 through June 18, 2025. Total revenue, profit, quantity sold, and shipping costs are lower in 2025, but this period is incomplete and should not be directly compared with the full years of 2023 and 2024.
 
-Overall, the analysis identifies Electronics as a strong-performing category, Australia as the leading market by total revenue, and product profitability and customer ratings as areas for further investigation. A Power BI dashboard can bring these findings together to support performance monitoring and business decisions.
+Electronics order patterns: Electronics recorded its highest order count through Social Media (1,784 orders), followed by Paid Ads (1,734 orders). By customer country, the UAE recorded the highest number of Electronics orders (1,273), followed by the USA (1,257) and Germany (1,256). These patterns suggest potential opportunities to test targeted promotions, although order counts alone do not establish marketing effectiveness.
+
+Overall, the analysis identifies Electronics as a strong-performing category, Australia as the leading market by total revenue, and product profitability and customer ratings as areas for further investigation.
+
+Based on these findings, the next step is to develop an interactive Power BI dashboard to monitor revenue, profit, sales trends, category performance, geographic markets, and traffic sources. Recommended actions include testing targeted Electronics promotions through Social Media and Paid Ads, evaluating market-specific campaigns in countries with high Electronics order counts, and reviewing profit margins before expanding discounts. Campaign performance should be measured using conversion rates, marketing costs, revenue, and profit to determine whether these strategies deliver sustainable growth. Further analysis should prioritize comparable time periods, investigate unprofitable transactions, and evaluate marketing effectiveness using additional cost and conversion data where available.
